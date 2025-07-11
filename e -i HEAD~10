@@ -1,0 +1,11 @@
+[33mcommit 136ca2d9fa6543c75297eade63e9218fe389bcbe[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: ksiswarya007 <136336216+ksiswarya007@users.noreply.github.com>
+Date:   Fri Jul 11 14:49:59 2025 +0530
+
+    Fix: removed .env containing secret key
+
+[33mcommit 096067846f696192a56ccd89272d4fcd77b1e08a[m
+Author: ksiswarya007 <136336216+ksiswarya007@users.noreply.github.com>
+Date:   Fri Jul 11 14:43:49 2025 +0530
+
+    first commit
