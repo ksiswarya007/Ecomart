@@ -64,7 +64,7 @@ export const stripeWebhooks=async(req,res)=>{
             await User.findByIdAndUpdate(userId,{cartItems:{}})
             break;
         }
-        case "payment_intent.succeeded":{
+        case "payment_intent.payment_failed":{
             const paymentIntent=event.data.object;
             const paymentIntentId=paymentIntent.id;
 
@@ -137,6 +137,12 @@ export const placeOrderStripe=async(req,res)=>{
 
         //add tax charge(2%)
         amount+=Math.floor(amount*0.02)
+        if (amount < 50) {
+        return res.status(400).json({
+            success: false,
+            message: "Minimum order amount must be at least ₹50.",
+    });
+}
 
         const order=await Order.create({
             userId,
@@ -157,7 +163,7 @@ export const placeOrderStripe=async(req,res)=>{
                     product_data:{
                         name:item.name,
                     },
-                    unit_amount:Math.floor(item.price+item.price*0.02)*100
+                    unit_amount:Math.floor(item.price+item.price*0.02)*100,
                 },
                 quantity:item.quantity,
             }
