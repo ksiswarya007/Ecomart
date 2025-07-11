@@ -65,7 +65,4 @@ STRIPE_WEBHOOK_SECRET=your_webhook_secret
   
 🔗 https://ecomart-final.vercel.app/seller
 
-Admin Credentials:
-```
-Email: admin@example.com  
-Password: IshAdmin123
+ **Note:** Admin login credentials are available upon request for demo/testing purposes.
